@@ -25,12 +25,12 @@ const uploadOnCloudinary = async (localFilePath) => {
         return response;
         
     } catch (error) {
-        fs.unlinkSync(localFilePath) //remove the locally saved tempory file as the upload operation got failed
+        fs.unlinkSync(localFilePath) //remove the locally saved temporary file as the upload operation got failed
         return null;
     }
 }
 
-export {uploadOnCloudinary}
+export { uploadOnCloudinary }
 
 // cloudinary.v2.uploader.upload("https://upload.wikimedia.org/wikipwdia/commons/a/ae/Olympic_flag.jpg",{public_id: "olympic_flag" },
 // function(error, result) {console.log(result); });
