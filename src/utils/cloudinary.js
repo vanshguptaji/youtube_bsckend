@@ -31,6 +31,10 @@ const uploadOnCloudinary = async (localFilePath) => {
     }
 }
 
+const deleteOnCloudinary = async (localFilePath) => {
+    
+}
+
 export { uploadOnCloudinary }
 
 // cloudinary.v2.uploader.upload("https://upload.wikimedia.org/wikipwdia/commons/a/ae/Olympic_flag.jpg",{public_id: "olympic_flag" },
