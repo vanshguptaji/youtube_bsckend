@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const likeSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-    },
+    // id: {
+    //     type: String,
+    //     required: true,
+    // },
     comment: {
         type: Schema.Types.ObjectId,
         ref: "Comment",

@@ -1,28 +1,36 @@
 import mongoose, { Schema } from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
-const playlistSchema = new Schema ({
-    id:{
-        type: String,
-        required: true,
-    },
+const playlistSchema = new Schema(
+  {
+    // id:{
+    //     type: String,
+    //     required: true,
+    // },
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     description: {
-        type: String,
-        required: false,
+      type: String,
+      required: false,
     },
-    videos: {
+    videos: [
+      {
         type: Schema.Types.ObjectId,
         ref: "Video",
         required: true,
-    },
+      },
+    ],
     owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-    }
-},{ timestamps: true })
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-export const PLaylist = mongoose.model("Playlist", playlistSchema)
+playlistSchema.plugin(mongooseAggregatePaginate);
+
+export const PLaylist = mongoose.model("Playlist", playlistSchema);
